@@ -59,13 +59,30 @@ showHeatmap = function() {
     // Determine size of heat island
     sizeOfHeatIsland = parseInt($('#heatIsland option:selected').val());
 
+    // Determine opacity of heat island
+    opacityOfHeatIsland = parseFloat($('#opacity option:selected').val());
+
     var pointArray = new google.maps.MVCArray(weightedPoints);
     heatmap = new google.maps.visualization.HeatmapLayer({
         data: pointArray
         , dissipating: false
-        , opacity: 0.5
+        , opacity: opacityOfHeatIsland
         , radius: sizeOfHeatIsland
     });
+
+    heatmap.set('gradient', [
+            'rgba(255, 65, 0, 0)',
+            'rgba(255, 55, 0, 1)',
+            'rgba(255, 45, 0, 1)',
+            'rgba(255, 35, 0, 1)',
+            'rgba(235, 25, 0, 1)',
+            'rgba(215, 15, 0, 1)',
+            'rgba(195, 0, 0, 1)',
+            'rgba(175, 0, 0, 1)',
+            'rgba(155, 0, 0, 1)',
+            'rgba(135, 0, 0, 1)',
+            'rgba(115, 0, 0, 1)'
+          ]);
     heatmap.setMap(map);
 }
 
