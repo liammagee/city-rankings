@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/map.css')
+    script(src='https://maps.googleapis.com/maps/api/js?libraries=visualization&sensor=true')
+    script(src='/javascripts/jquery.js')
+    script(src='/javascripts/jstat-2.0/jstat.min.js')
+    script(src='/javascripts/underscore/underscore.js')
+    script(src='/javascripts/jquery.parse/jquery.parse.js')
+    script(src='/javascripts/main.js')
+  body
+    block content

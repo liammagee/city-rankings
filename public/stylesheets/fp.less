@@ -1,0 +1,203 @@
+
+//@main-color: #1F62C1;
+@main-color: #1F1F1F;
+
+
+.hide {
+  display:none;
+}
+#wrapper {
+}
+.bg {
+  position:absolute;
+  top: -6%; left: -18%;
+  width: 114%;
+}
+
+
+#content-pane {
+  display: none;
+  position:absolute;
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+  top:0%;
+  left:0%;
+  text-align: left;
+}
+
+
+/* map */
+#gameworld  {
+}
+#world-container {
+  position:absolute;
+  overflow: hidden;
+  float: left;
+  left:0%;
+  top:0%;
+  width: 66%;
+  height: 78%;
+/*border-radius:4px;*/
+  padding:1%;
+/*background:rgba(31, 98, 193, 0.5);*/
+  display:block;
+  z-index: 1;
+/*width:480px; height:400px;*/
+}
+
+#imageCanvas        {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+#map_canvas         {
+  position:relative;
+  overflow: hidden;
+  opacity: 1.0;
+  float: left;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+#actual_map         {
+/*position:absolute;*/
+/*top: 50%;*/
+/*left: 50%;*/
+
+}
+#baseCanvas         {
+  position:absolute;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+}
+#guideCanvas        {
+  position:absolute;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+}
+#agentCanvas        {
+  position:absolute;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+}
+#resourceCanvas     {
+  position:absolute;
+  z-index: 6;
+  width: 100%;
+  height: 100%;
+}
+#scrollingCanvas    {
+  position:absolute;
+  z-index: 7;
+  width: 100%;
+  height: 100%;
+}
+#noticeCanvas       {
+  position:absolute;
+  z-index: 8;
+}
+
+#notifications {
+  position:absolute;
+  top: 80%;
+  left: 0%;
+  height: 20%;
+  width:98%;
+  padding: 1%;
+/*background: @main-color;*/
+/*border-radius:4px;*/
+  opacity: 0.85;
+}
+
+
+
+
+canvas {
+  position:absolute;
+}
+#map_canvas, #alt_map_canvas {
+  position: absolute;
+  border: #FFF 1px solid;
+}
+#c1, #c2, #c3, #c4 {
+  border: #000 1px solid;
+}
+#c1.over, #c2.over, #c3.over, #c4.over {
+  border: #000 1px solid;
+}
+a {
+  color: #000;
+  text-decoration:none;
+}
+li {
+  list-style: none;
+}
+ul, li {
+  margin: 0px;
+  padding: 0px;
+}
+
+.purchase {
+  border: 0px;
+}
+
+*[draggable=true] {
+  -moz-user-select:none;
+  -khtml-user-drag: element;
+  cursor: move;
+}
+*:-khtml-drag {
+  background-color: rgba(238, 238, 238, 0.5);
+}
+
+
+.slider-container {
+  height: 1em;
+}
+.slider-container > * {
+  float: left;
+/*padding-left: 1em;*/
+
+}
+
+.min-slider {
+  padding-right: 1em;
+}
+
+.max-slider {
+  padding-left: 1em;
+}
+
+.param-slider {
+  width: 70%;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+#world-parameters p {
+    margin: 1em;
+}
+
+#graph-area {
+    position:absolute;
+    top: 82%;
+    left: 0%;
+    height: 20%;
+    width:98%;
+    padding: 1%;
+}
+#world-graph {
+ position:absolute;
+float: left;
+padding:7px;
+  text-align: center;
+    width:90%;
+    height:100%;
+    border: 1px solid @main-color;
+}
+

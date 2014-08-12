@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+
+</head>
+<body>
+<a href="http://jquery.com/">jQuery</a>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script src="/javascripts/techo.js"></script>
+
+
+<div id="images">
+
+</div>
+<script>
+    $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
+            {
+                tags: "mount rainier",
+                tagmode: "any",
+                format: "json"
+            },
+            function(data) {
+                $.each(data.items, function(i,item){
+                    $("<img/>").attr("src", item.media.m).appendTo("#images");
+                    if ( i == 3 ) return false;
+                });
+            });</script>
+
+
+</body>
+</html>

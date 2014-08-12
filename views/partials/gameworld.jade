@@ -1,0 +1,70 @@
+#gameworld(z-index='1')
+  #world-container(z-index='1')
+    canvas#imageCanvas(z-index='1')
+    #map_canvas(z-index='2')
+      #actual_map
+    canvas.scrollable-canvas#baseCanvas(z-index='3')
+    canvas.scrollable-canvas#guideCanvas(z-index='4')
+    canvas.scrollable-canvas#agentCanvas(z-index='5')
+    canvas.scrollable-canvas#resourceCanvas(z-index='6')
+    canvas#scrollingCanvas(z-index='7', resize='true')
+    canvas#noticeCanvas(z-index='8')
+  #notifications
+    #model-tabs
+      ul
+        li
+          a(href='#console') Console
+        li
+          a(href='#world-parameters') Parameters
+        li
+          a(href='#graph-area') Graph
+        li
+          a(id='world-information-link',href='#world-information') Information
+        li
+          a(href='#world-code') Code
+        li
+          a(href='#world-editor') Editor
+      #console
+      #graph-area
+        #world-graph
+        //
+          #graph-controls
+            label(for='graph-config') Show graph for:
+            select#graph-config(name='graph-config')
+              option(name='pop-count') Population
+              option(name='pop-health') Population Health
+              option(name='saved-expired') Survived/Expired
+              option(name='hdi') Human Development Index
+              option(name='hpi') Happy Planet Index
+      #world-parameters
+        input(type='button',name='Step')
+      #world-information
+      #world-code
+        textarea#module-editor
+      #world-editor(style='display:none')
+        div
+          a#refresh-tiles(href='#') Clear all
+        div
+          a#fill-all(href='#') Fill all
+        div
+          a#clear-entry-points(href='#') Clear Entry Points
+        div
+          a#clear-exit-points(href='#') Clear Exit Points
+        div
+          a#show-world-properties(href='#') Properties
+        div
+          a#undo-action(href='#') Undo (last action only)
+        div
+          a#cancel-world-editor(href='#') Close Editor
+        div
+          a#save-world(href='#') Save Level
+        div
+          a#toggle-mode(href='#') Clear mode
+        div
+          a#edit-map(href='#') Edit map
+        div
+          a#save-map(href='#') Save map
+        div
+          a#close-map(href='#') Close map
+
+    #handle(style='height: 10px;')

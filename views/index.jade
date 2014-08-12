@@ -1,0 +1,123 @@
+extends layout
+
+
+block content
+  .wrapper.header_wrapper
+    header
+      h1 The Global Imaginary
+      // 
+        a.logo(href='http://www.techo.org')
+          img(src='/images/logo_techo.png')
+  .wrapper.body_wrapper
+    #nav
+      #div_show_results
+        div Show results by:
+        div
+          select#showResults(name='results')
+            option(value='0') Homicide Rates (2013)
+            option(value='1') Fastest Growing Cities
+            option(value='2') Monocle's Most Livable City Index (2014) 
+            option(value='3') The EIU's Liveability Ranking (2013)
+            option(value='4') Mercer Quality of Living Survey (2014)
+            option(value='5') UBS's Richest Cities (2012)
+            option(value='6') Siemen's Green Cities Index (2011)
+            option(value='7') Global Cities Index (2014)
+            option(value='8') Population - city proper (2014)
+            option(value='9') Population - urban area (2014)
+      #div_calc_results
+        div Calculate results by:
+        div
+          select#calculateResults(name='calcResults')
+            option(value='0') As is
+            option(value='1') Exponent of 2
+            option(value='2') Log
+      #div_size_of_heat_island
+        div Size of heat island:
+        div
+          select#heatIsland(name='heatIsland')
+            option(value='1') 1
+            option(value='2') 2
+            option(value='3') 3
+            option(value='4') 4
+            option(value='5') 5
+      //
+        #div_30_1
+          div Show by :
+          div
+            select#show(name='30_1')
+              option(value='0') Todos
+              option(value='1') En primer lugar
+              option(value='2') En segundo lugar
+              option(value='3') En tercer lugar
+              option(value='9') No sabe / No responde
+        #div_30_2
+          div Desague a cámara séptica y pozo ciego:
+          div
+            select#p_30_2(name='30_2')
+              option(value='0') Todos
+              option(value='1') En primer lugar
+              option(value='2') En segundo lugar
+              option(value='3') En tercer lugar
+              option(value='9') No sabe / No responde
+        #div_30_3
+          div Desague sólo a pozo negro/ ciego u hoyo, excavación a tierra:
+          div
+            select#p_30_3(name='30_3')
+              option(value='0') Todos
+              option(value='1') En primer lugar
+              option(value='2') En segundo lugar
+              option(value='3') En tercer lugar
+              option(value='9') No sabe / No responde
+        #div_31_1
+          div Acceso al sistema de agua potable a través de agua corriente (red pública):
+          div
+            select#p_31_1(name='31_1')
+              option(value='0') Todos
+              option(value='1') En primer lugar
+              option(value='2') En segundo lugar
+              option(value='3') En tercer lugar
+              option(value='9') No sabe / No responde
+        #div_31_2
+          div Acceso al agua a través de perforación/pozo:
+          div
+            select#p_31_2(name='31_2')
+              option(value='0') Todos
+              option(value='1') En primer lugar
+              option(value='2') En segundo lugar
+              option(value='3') En tercer lugar
+              option(value='9') No sabe / No responde
+        #div_31_3
+          div Acceso al agua través de camión cisterna:
+          div
+            select#p_31_3(name='31_3')
+              option(value='0') Todos
+              option(value='1') En primer lugar
+              option(value='2') En segundo lugar
+              option(value='3') En tercer lugar
+              option(value='9') No sabe / No responde
+      // 
+        div
+          div
+            input#level(type='radio',name='level',value='2',checked='checked')
+            span Localidad
+          div
+            input#level(type='radio',name='level',value='1')
+            span Partido/Municipio/Departamento
+          div
+            input#level(type='radio',name='level',value='0')
+            span Provincia
+      div
+        input#showMarkers(type='checkbox',name='showMarkers')
+        span Show Markers
+      div
+        input#showHeatmap(type='checkbox',name='showHeatmap',checked='checked')
+        span Show Heat map
+      //
+        div
+          input#showKML(type='checkbox',name='showKML')
+          span Show KML
+      div
+        input#query(type='submit',name='query', value='Show Results')
+    #map
+      section.body
+        #map_canvas
